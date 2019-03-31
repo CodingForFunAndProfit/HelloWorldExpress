@@ -1,0 +1,33 @@
+{
+    "name": "helloworldexpress",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+        "build": "tsc",
+        "prestart": "npm run build",
+        "dev": "SET NODE_ENV=development && nodemon ./bin/www",
+        "start": "node ./bin/www",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CodingForFunAndProfit/HelloWorldExpress.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CodingForFunAndProfit/HelloWorldExpress/issues"
+    },
+    "homepage": "https://github.com/CodingForFunAndProfit/HelloWorldExpress#readme",
+    "dependencies": {
+        "express": "^4.16.4"
+    },
+    "devDependencies": {
+        "@types/express": "^4.16.1",
+        "@types/node": "^11.12.2",
+        "tslint": "^5.14.0",
+        "typescript": "^3.4.1"
+    }
+}
