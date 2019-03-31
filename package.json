@@ -6,6 +6,7 @@
     "scripts": {
         "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
         "build": "tsc",
+        "postinstall": "npm run build",
         "prestart": "npm run build",
         "dev": "SET NODE_ENV=development && nodemon ./bin/www",
         "start": "node ./bin/www",
