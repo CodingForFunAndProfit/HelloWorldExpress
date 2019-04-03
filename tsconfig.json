@@ -9,8 +9,10 @@
         "outDir": "dist",
         "baseUrl": ".",
         "paths": {
-            "*": ["node_modules/*"]
-        }
+            "*": ["node_modules/*", "src/types/*"]
+        },
+        "lib": ["dom", "es2015"]
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
+    "exclude": ["src/**/*.test.ts"]
 }

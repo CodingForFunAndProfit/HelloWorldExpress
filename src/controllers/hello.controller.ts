@@ -1,12 +1,12 @@
-import { Request, Response, Router } from "express";
+import { Request, Response, Router } from 'express';
 
 const router: Router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-    res.send("Hello, World!");
+router.get('/', (req: Request, res: Response) => {
+    res.send('Hello, World!');
 });
 
-router.get("/:name", (req: Request, res: Response) => {
+router.get('/:name', (req: Request, res: Response) => {
     const { name } = req.params;
 
     res.send(`Hello, ${name}!`);
