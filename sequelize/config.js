@@ -12,7 +12,6 @@ module.exports = {
         seederStorageTableName: 'SequelizeMeta'
     },
     test: {
-        use_env_variable: 'DATABASE_URL',
         username: 'postgres',
         password: '',
         database: 'travisdb',
