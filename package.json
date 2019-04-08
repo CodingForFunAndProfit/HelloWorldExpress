@@ -6,8 +6,8 @@
     "scripts": {
         "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
         "build": "tsc",
-        "heroku-postbuild": "npm run build && npm run heroku:migrate",
-        "heroku:migrate": "sequelize db:migrate --env production",
+        "heroku-postbuild": "npm run build && npm run db:migrate",
+        "db:migrate": "sequelize db:migrate --env production",
         "start": "npm run serve",
         "serve": "node ./dist/server",
         "watch-node": "set DEBUG=helloworldexpress & node ./dist/server",

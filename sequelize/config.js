@@ -17,7 +17,9 @@ module.exports = {
         database: 'travisdb',
         host: '127.0.0.1',
         port: 5433,
-        dialect: 'postgres'
+        dialect: 'postgres',
+        seederStorage: 'sequelize',
+        seederStorageTableName: 'SequelizeMeta'
     },
     production: {
         use_env_variable: 'DATABASE_URL',
@@ -26,6 +28,8 @@ module.exports = {
         ssl: true,
         dialectOptions: {
             ssl: true
-        }
+        },
+        seederStorage: 'sequelize',
+        seederStorageTableName: 'SequelizeMeta'
     }
 };
