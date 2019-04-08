@@ -13,5 +13,5 @@ before_script:
 
 script:
     - npm run prebuild
-    - npm run db:migrate
+    - npm run db:migrate:test
     - npm run test
