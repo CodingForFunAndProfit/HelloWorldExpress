@@ -6,9 +6,7 @@
     "scripts": {
         "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
         "build": "tsc",
-        "heroku-postbuild": "npm run build && npm run db:migrate:prod",
-        "db:migrate:prod": "sequelize db:migrate --env production",
-        "db:migrate:test": "sequelize db:migrate --env test",
+        "heroku-postbuild": "npm run build",
         "start": "npm run serve",
         "serve": "node ./dist/server",
         "watch-node": "set DEBUG=helloworldexpress & node ./dist/server",
@@ -49,7 +47,6 @@
         "graphql": "14.2.1",
         "pg": "7.9.0",
         "reflect-metadata": "0.1.13",
-        "sequelize": "5.2.13",
         "type-graphql": "0.17.1"
     },
     "devDependencies": {
@@ -62,7 +59,6 @@
         "@types/supertest": "2.0.7",
         "@types/validator": "10.11.0",
         "jest": "24.7.1",
-        "sequelize-cli": "5.4.0",
         "supertest": "4.0.2",
         "ts-jest": "24.0.2",
         "tslint": "5.15.0",
