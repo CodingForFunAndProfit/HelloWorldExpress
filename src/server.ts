@@ -1,9 +1,6 @@
-// module dependencies
-import app from './app';
-
 import Debug from 'debug';
+import app from './app';
 const debug = Debug('helloworldexpress');
-
 import http from 'http';
 
 // create http server
@@ -70,6 +67,9 @@ function onError(error: any) {
  */
 function onListening() {
     const addr = httpServer.address();
+    if (addr == null) {
+        return;
+    }
     const bind =
         typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     debug('Listening on ' + bind);
