@@ -10,7 +10,6 @@ services:
 
 before_script:
     - psql -c 'create database travisdb;' -U postgres
-    - npm run db:migrate:test
 script:
     - npm run prebuild
     - npm run test
