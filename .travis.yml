@@ -7,7 +7,8 @@ install:
 
 services:
     - postgresql
-
+env:
+    - DATABASE_URL=postgres://postgres@localhost:5432/travisdb
 before_script:
     - psql -c 'create database travisdb;' -U postgres
 script:
