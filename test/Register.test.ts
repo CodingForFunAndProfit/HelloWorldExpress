@@ -6,7 +6,7 @@ import { User } from '../src/db/entity/User';
 
 let conn: Connection;
 beforeAll(async () => {
-    conn = await testConn();
+    conn = await testConn(true);
 });
 
 afterAll(async () => {
@@ -33,14 +33,16 @@ describe('Register', () => {
             email: faker.internet.email(),
             password: faker.internet.password(5)
         };
-        console.log(user);
+
         const response = await gCall({
             source: registerMutation,
             variableValues: {
                 input: user
             }
         });
-        console.log(response);
+        if (response && response.errors) {
+            console.log(response.errors[0].originalError);
+        }
         expect(response).toMatchObject({
             data: {
                 register: {
