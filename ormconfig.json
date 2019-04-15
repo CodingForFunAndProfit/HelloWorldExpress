@@ -1,0 +1,26 @@
+[
+    {
+        "name": "default",
+        "type": "postgres",
+        "host": "localhost",
+        "port": 5433,
+        "username": "helloworldexpressuser",
+        "password": "superpassword",
+        "database": "helloworldexpressdb",
+        "synchronize": true,
+        "logging": false,
+        "entities": ["src/db/entity/*.*"]
+    },
+    {
+        "name": "distfolderlocal",
+        "type": "postgres",
+        "host": "localhost",
+        "port": 5433,
+        "username": "helloworldexpressuser",
+        "password": "superpassword",
+        "database": "helloworldexpressdb",
+        "synchronize": true,
+        "logging": false,
+        "entities": ["dist/db/entity/*.*"]
+    }
+]

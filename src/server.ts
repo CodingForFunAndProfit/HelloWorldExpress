@@ -1,22 +1,19 @@
 import Debug from 'debug';
-import app from './app';
 const debug = Debug('helloworldexpress');
+import { appPromise } from './app';
 import http from 'http';
 
-// create http server
 const httpPort = normalizePort(process.env.PORT || '8080');
+let httpServer: any;
+appPromise.then((app: Express.Application) => {
+    httpServer = http.createServer(app);
 
-app.set('port', httpPort);
-const httpServer = http.createServer(app);
+    httpServer.listen(httpPort);
 
-// listen on provided ports
-httpServer.listen(httpPort);
+    httpServer.on('error', onError);
 
-// add error handler
-httpServer.on('error', onError);
-
-// start listening on port
-httpServer.on('listening', onListening);
+    httpServer.on('listening', onListening);
+});
 
 /**
  * Normalize a port into a number, string, or false.
@@ -44,7 +41,7 @@ function onError(error: any) {
     if (error.syscall !== 'listen') {
         throw error;
     }
-    const port = app.get('port');
+    const port = httpPort;
     const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
     // handle specific listen errors with friendly messages
