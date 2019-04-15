@@ -30,7 +30,7 @@ describe('Register', () => {
         const user = {
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
-            email: faker.internet.email(),
+            email: faker.internet.email().replace('_', '.'),
             password: faker.internet.password(5)
         };
 
