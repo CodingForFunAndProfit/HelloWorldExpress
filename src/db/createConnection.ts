@@ -6,6 +6,9 @@ export const getTypeormConnection = async () => {
         type: 'postgres',
         synchronize: true,
         logging: false,
+        extra: {
+            ssl: true
+        },
         entities: ['dist/db/entity/*.*']
     };
     if (process.env.DATABASE_URL) {
