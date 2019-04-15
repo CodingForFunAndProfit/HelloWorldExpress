@@ -1,7 +1,6 @@
 import bcrypt from 'bcryptjs';
 import { Arg, Mutation, Resolver } from 'type-graphql';
 import { createConfirmationUrl } from '../../../utils/createEmailUrls';
-// import { RegisterInput } from './register/RegisterInput';
 // import { isAuth } from '../middleware/isAuth';
 import { sendEmail } from '../../../utils/sendEmail';
 import { User } from '../../entity/User';

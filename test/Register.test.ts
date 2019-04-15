@@ -18,7 +18,6 @@ mutation Register($input: RegisterInput!) {
     register(
       input: $input
     ) {
-      id
       firstName
       lastName
       email
@@ -34,14 +33,14 @@ describe('Register', () => {
             email: faker.internet.email(),
             password: faker.internet.password(5)
         };
-
+        console.log(user);
         const response = await gCall({
             source: registerMutation,
             variableValues: {
                 input: user
             }
         });
-
+        console.log(response);
         expect(response).toMatchObject({
             data: {
                 register: {
