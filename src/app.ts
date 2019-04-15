@@ -29,6 +29,7 @@ const main = async () => {
         schema,
         context: ({ req, res }: any) => ({ req, res }),
         playground: true,
+        introspection: true,
         validationRules: [
             queryComplexity({
                 // The maximum allowed query complexity, queries above this threshold will be rejected
