@@ -28,6 +28,7 @@ const main = async () => {
     const apolloServer = new ApolloServer({
         schema,
         context: ({ req, res }: any) => ({ req, res }),
+        playground: true,
         validationRules: [
             queryComplexity({
                 // The maximum allowed query complexity, queries above this threshold will be rejected
